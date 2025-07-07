@@ -25,19 +25,19 @@ Fonts:
 
 /* Set up the main font and background color for the whole page */
 body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
+  background-color: #FFFBEA; /* Cream background */
   font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
   margin: 0;
   padding: 0;
   color: #222;
 }
 
-/* Add a slight shadow and rounded corners to each section for depth */
+/* Make all sections cream except subheading */
 section {
-  background: #fff; /* White background for sections */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
+  background: #FFFBEA; /* Cream background for all sections */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07);
+  margin: 24px 10px;
   padding: 24px 16px;
 }
 
@@ -60,13 +60,60 @@ section {
   background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
 }
 
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
+/* Make the hero section banner fit the page better */
+.hero {
+  min-height: 60vh;
+  padding: 60px 0;
+  background-image: url('img/girl-school-work.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Overlay for better text contrast */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 1;
+}
+
+/* Hero text container */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 56px 32px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Make the main heading in the banner larger and more appealing */
+.hero-inner h1 {
+  font-size: 2.7rem;
+  margin-bottom: 32px;
+  line-height: 1.2;
+  font-family: 'Proxima Nova', Arial, sans-serif;
   font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  color: #FFC907; /* Yellow heading */
+}
+
+/* Hero paragraph larger for readability */
+.hero-inner p {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  color: #fff; /* Subheading stays white */
 }
 
 /* Style the subheadline */
@@ -86,7 +133,7 @@ section {
 
 /* Add accent color to section headings */
 h2 {
-  color: #2E9DF7; /* Primary blue */
+  color: #F5402C; /* Red for smaller headings */
   margin-top: 0;
   font-weight: bold;
 }
@@ -136,6 +183,101 @@ section {
   margin-bottom: 20px;
 }
 
+/* Impact section styles for side-by-side layout */
+.impact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0;
+  background: #f7fafc;
+}
+
+.impact-box {
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(46,157,247,0.10);
+  padding: 24px 16px;
+  gap: 28px;
+}
+
+.impact-photo {
+  width: 260px;
+  max-width: 45vw;
+  min-width: 140px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(46,157,247,0.12);
+  margin-right: 32px;
+  height: auto;
+  display: block;
+}
+
+/* Add transition and scale effect to buttons and links */
+.cta-button, .donate-button, a {
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover, .donate-button:hover, a:hover {
+  background-color: #ff9f00;
+  transform: scale(1.07);
+}
+
+/* Add transition and scale effect to impact images */
+.impact-photo {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.impact-photo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(46,157,247,0.18);
+}
+
+/* Responsive: stack impact section vertically on small screens */
+@media (max-width: 800px) {
+  .impact-box {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 4px;
+  }
+  .impact-photo {
+    margin-right: 0;
+    margin-bottom: 18px;
+  }
+  .impact-text {
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+/* Responsive: stack vertically on small screens and adjust image size */
+@media (max-width: 800px) {
+  .hero-inner {
+    padding: 32px 10px;
+    max-width: 98vw;
+  }
+  .hero-inner h1 {
+    font-size: 2rem;
+  }
+  .impact-box {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 4px;
+  }
+  .impact-photo {
+    width: 70vw;
+    max-width: 260px;
+    margin-right: 0;
+    margin-bottom: 18px;
+  }
+  .impact-text {
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
 /* 
   Media Queries for Responsive Design
   Media queries help make your website look good on different screen sizes,
@@ -144,55 +286,4 @@ section {
 
 /* This media query applies styles when the screen is 600px wide or less (like on most phones) */
 @media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
-  .hero {
-    padding: 32px 8px;
-    font-size: 1em;
-  }
-
-  /* Make headline font size smaller so it fits on small screens */
-  .hero h1 {
-    font-size: 1.4em;
-  }
-
-  /* Make subheadline font size smaller */
-  .hero p {
-    font-size: 1em;
-  }
-
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
-  }
-
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
-    text-align: center;
-  }
-
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
-  }
-}
-
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
-  .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .impact-image {
-    width: 300px;
-  }
-}
+  /* Make hero section padding

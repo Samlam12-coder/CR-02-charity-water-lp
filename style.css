@@ -1,0 +1,172 @@
+/* Set a clean white background for the page */
+body {
+  background-color: #fff; /* White background */
+  margin: 0;
+  padding: 0;
+  font-family: Avenir, Arial, sans-serif;
+}
+
+/* Baby blue background for main sections */
+.content, .impact-story, .donation-section {
+  background-color: #8BD1CB; /* Baby blue */
+  width: 85%;
+  max-width: 700px;
+  margin: 32px auto;
+  border-radius: 10px;
+  padding: 32px 20px;
+  text-align: center;
+}
+
+/* Banner style for the main headline and subheadline */
+.banner {
+  width: 100%;
+  background-color: #FFC907; /* Yellow background for the banner */
+  text-align: center;
+  padding: 32px 0 16px 0;   /* Top and bottom padding */
+  margin-bottom: 0;
+  display: block;           /* Make sure banner is a block element */
+  box-sizing: border-box;   /* Include padding in width */
+  /* Add a border for visibility (optional for students to see) */
+  /* border-bottom: 2px solid #2E9DF7; */
+}
+
+/* Banner title style */
+.banner-title {
+  width: 100%;
+  background-color: #FFC907; /* Yellow background for the banner */
+  text-align: center;
+  padding: 36px 0 20px 0;
+  margin-bottom: 0;
+}
+
+.banner-title h1 {
+  color: #2E9DF7; /* Blue text */
+  font-family: 'Proxima Nova', Arial, sans-serif;
+  font-size: 2.5em; /* Large and inviting */
+  margin: 0 0 12px 0;
+  letter-spacing: 1px;
+}
+
+.banner-title p {
+  color: #2E9DF7;
+  font-family: Avenir, Arial, sans-serif;
+  font-size: 1.35em;
+  margin: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Remove baby blue background from sections */
+.content, .impact-story, .donation-section {
+  background: none;
+  width: 85%;
+  max-width: 700px;
+  margin: 32px auto;
+  border-radius: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Headline styles */
+h1, h2 {
+  font-family: 'Proxima Nova', Arial, sans-serif; /* Headlines use Proxima Nova */
+  color: #2E9DF7; /* Blue for headlines */
+  margin-top: 0;
+  font-size: 2em; /* Make headlines bigger */
+}
+
+/* Headline styles for other sections */
+h2 {
+  font-family: 'Proxima Nova', Arial, sans-serif;
+  color: #2E9DF7;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* Subheadline and story text styles */
+p, .banner-subheadline {
+  font-family: Avenir, Arial, sans-serif; /* Subheadlines and story use Avenir */
+  color: #333; /* Dark text for readability */
+  font-size: 1.18em; /* Make paragraph text bigger */
+  line-height: 1.6;
+}
+
+/* Highlighted text in the headline and titles */
+.highlight, .title-highlight {
+  background-color: #FFC907; /* Yellow highlight */
+  padding: 0 8px;
+  border-radius: 4px;
+}
+
+/* Style for the main call-to-action button */
+.cta-button, .donate-button {
+  display: inline-block;
+  background-color: #FFC907; /* Yellow */
+  color: #2E9DF7; /* Blue text */
+  font-weight: bold;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin-top: 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+/* Button hover effect */
+.cta-button:hover, .donate-button:hover {
+  background-color: #FF902A; /* Orange on hover */
+}
+
+/* Make images a little smaller and centered */
+img {
+  width: 65%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ethiopia photo in table should be a bit smaller */
+.impact-story img {
+  width: 95%;
+  max-width: 340px;
+}
+
+/* Add a green background (#4FCB53) to the donation section only */
+.donation-section {
+  background-color: #4FCB53; /* Green background for this section */
+  border-radius: 10px;
+  padding: 32px 0;
+}
+
+/* Make the donation section text easy to read on green */
+.donation-section h2,
+.donation-section p,
+.donation-section a {
+  color: #fff; /* White text for contrast */
+}
+
+/* Responsive for small screens */
+@media (max-width: 700px) {
+  .content, .impact-story, .donation-section {
+    width: 98%;
+    max-width: 98%;
+    padding: 0 4px;
+  }
+  .impact-story table, .impact-story tr, .impact-story td {
+    display: block;
+    width: 100%;
+    text-align: center !important;
+    padding-left: 0 !important;
+  }
+  .impact-story img {
+    margin-bottom: 12px;
+    max-width: 95vw;
+  }
+}
